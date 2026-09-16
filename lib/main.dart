@@ -9,13 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Icon(
-            Icons.favorite, // Loại icon
-            color: Colors.red, // Màu
-            size: 80, // Kích thước
+          child: Image.asset(
+            'assets/images/flutter_logo.png', // Đường dẫn tới ảnh
+            width: 150, // Chiều rộng
+            height: 150, // Chiều cao
+            fit: BoxFit.contain, // Cách hiển thị trong khung
           ),
         ),
       ),
