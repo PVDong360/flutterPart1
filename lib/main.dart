@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Image.asset(
-            'assets/images/flutter_logo.png', // Đường dẫn tới ảnh
-            width: 150, // Chiều rộng
-            height: 150, // Chiều cao
-            fit: BoxFit.contain, // Cách hiển thị trong khung
+          child: Image.network(
+            'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+            width: 200, // chiều rộng
+            height: 200, // chiều cao
+            fit: BoxFit.cover, // hiển thị ảnh đầy khung
           ),
         ),
       ),
