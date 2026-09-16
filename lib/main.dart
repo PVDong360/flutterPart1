@@ -11,13 +11,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Image.network(
-            'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
-            width: 200, // chiều rộng
-            height: 200, // chiều cao
-            fit: BoxFit.cover, // hiển thị ảnh đầy khung
-          ),
+        body: Builder(
+          builder: (context) {
+            return Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  // Hiển thị SnackBar
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Bạn vừa nhấn nút!'),
+                    ),
+                  );
+
+                  // In ra Debug Console
+                  print('Button pressed!');
+                },
+                child: const Text('Nhấn tôi!'),
+              ),
+            );
+          },
         ),
       ),
     );
