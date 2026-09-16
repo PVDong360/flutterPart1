@@ -1,0 +1,64 @@
+Câu 8
+1. “Nếu muốn đổi giao diện màn hình Hello World, ta sửa ở đâu?”
+- ở vị trí lib/main.dart và trong hàm main()
+
+2. “Nếu muốn thêm package vào project?”
+- pubspec.yaml chứa các package muốn thêm phải chạy
+flutter pub get
+
+3. “Nếu muốn ứng dụng chạy trên Chrome, Flutter sử dụng cấu hình ở thư mục nào?”
+- flutter sử dụng cấu hình ở thư mục web/ và chạy flutter run -d chrome
+
+4. “Nếu muốn chạy trên Android, Flutter sử dụng cấu hình ở thư mục nào?”
+- ở thư mục android chạy flutter run và chọn nền tảng muốn chạy
+
+5. “File nào là điểm bắt đầu của chương trình?”
+lib/                    Code ứng dụng
+lib/main.dart           Điểm bắt đầu ứng dụng
+pubspec.yaml            Khai báo project/package/assets
+android/, ios/, web/... Cấu hình cho từng nền tảng
+.gitignore              Quy định file Git bỏ qua
+
+bài 9
+1. Khi chạy chương trình, hàm nào được thực hiện đầu tiên?
+- Hàm void main() là entry point điểm khởi đầu của thực thi
+
+2. runApp() có nhiệm vụ gì?
+- khởi chạy chương trình (Hãy khởi chạy ứng dụng với Widget MainApp làm Widget gốc.)
+
+3. Widget gốc trong chương trình này là gì?
+- là MainApp extends StatelessWidget 
+
+Widget là building block – “viên gạch” để xây dựng giao diện Flutter.
+Ví dụ, một số widget phổ biến như:
++ Text → hiển thị chữ
++ Button → nút
++ Image → hình ảnh
++ Row → sắp xếp ngang
++ Column → sắp xếp dọc
++ Center → căn giữa
++ Scaffold → cấu trúc màn hình
+
+4. Hãy vẽ Widget Tree của chương trình.
+MainApp
+- material App
+-- Scaffold ()
+--- center
+---- Text
+----- Hello World
+
+nhớ:
+@override có nghĩa là:
+Class MainApp đang ghi đè (override) một phương thức được định nghĩa ở class cha(StatelessWidget).
+StatelessWidget yêu cầu chúng ta triển khai: build()
+Vì vậy MainApp phải có: Widget build(BuildContext context)
+
+Scaffold cung cấp bộ khung cơ bản của một màn hình Material Design.
+Ví dụ Scaffold có thể chứa:
+Scaffold(
+appBar: ...,
+body: ...,
+drawer: ...,
+floatingActionButton: ...,
+bottomNavigationBar: ...,
+)
